@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { getTrending, getNetflixOriginals, getTopRated } from '../api/tmdb';
 import Row from '../components/Row';
 

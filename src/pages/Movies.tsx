@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
   getTrending,
   getTopRated,
@@ -10,11 +10,13 @@ import {
 import Row from '../components/Row';
 
 const Movies = () => {
+  // State to store different movie categories
   const [movies, setMovies] = useState<any>({});
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
+        // Fetch multiple movie categories in parallel
         const [trending, topRated, action, comedy, horror, romance] = await Promise.all([
           getTrending(),
           getTopRated(),
@@ -24,7 +26,9 @@ const Movies = () => {
           getRomanceMovies()
         ]);
 
+        // Store fetched movies in state
         setMovies({
+          // Filter only movies from the trending category (excluding TV shows)
           trending: trending.data.results.filter((item: any) => item.media_type === 'movie'),
           topRated: topRated.data.results,
           action: action.data.results,
@@ -38,11 +42,12 @@ const Movies = () => {
     };
 
     fetchMovies();
-  }, []);
+  }, []); // Runs only once when the component mounts
 
   return (
     <div className="pt-20 min-h-screen bg-black">
       <div className="space-y-8">
+        {/* Movie rows for each category */}
         <Row title="Trending Movies" movies={movies.trending || []} isLarge />
         <Row title="Top Rated" movies={movies.topRated || []} />
         <Row title="Action" movies={movies.action || []} />

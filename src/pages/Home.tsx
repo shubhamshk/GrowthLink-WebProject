@@ -13,11 +13,14 @@ import {
 } from '../api/tmdb';
 
 const Home = () => {
+  // State to store different categories of movies
   const [movies, setMovies] = useState<any>({});
 
   useEffect(() => {
+    // Function to fetch all movie categories from the API
     const fetchMovies = async () => {
       try {
+        // Fetching multiple categories at once using Promise.all
         const [
           trending,
           netflixOriginals,
@@ -38,6 +41,7 @@ const Home = () => {
           getDocumentaries()
         ]);
 
+        // Updating the state with fetched movie data
         setMovies({
           trending: trending.data.results,
           netflixOriginals: netflixOriginals.data.results,
@@ -49,17 +53,20 @@ const Home = () => {
           documentaries: documentaries.data.results
         });
       } catch (error) {
-        console.error('Error fetching movies:', error);
+        console.error('Error fetching movies:', error); // Log error if fetching fails
       }
     };
 
     fetchMovies();
-  }, []);
+  }, []); // Empty dependency array ensures it runs only once when the component mounts
 
   return (
     <div className="relative">
+      {/* Display the main banner */}
       <Banner />
+
       <div className="relative z-20 -mt-16">
+        {/* Render different movie categories as rows */}
         <Row title="Trending Now" movies={movies.trending || []} isLarge />
         <Row title="Netflix Originals" movies={movies.netflixOriginals || []} />
         <Row title="Top Rated" movies={movies.topRated || []} />

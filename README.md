@@ -1,64 +1,50 @@
-<<<<<<< HEAD
-# GrowthLink-Project
-Netflix clone , using react js and firebase with use of tmdb api 
-=======
-<<<<<<< HEAD
-# GrowthLink-Project
-Netflix clone , using react js and firebase with use of tmdb api 
-=======
-# React + TypeScript + Vite
+GrowthLink-WebProject
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GrowthLink-WebProject is a web application(Netflix clone)  built using React(vite) and TypeScript. The project integrates Tailwind CSS for styling and utilizes Firebase for backend services. and i used tmdb api for getting the movies and series data
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Working Demo
 
-## Expanding the ESLint configuration
+https://growth-link-web-project-3l9srkzhu-shubhamshks-projects.vercel.app/
+## Run Locally
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Clone the project
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/shubhamshk/GrowthLink-WebProject.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Go to the project directory
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+ cd GrowthLink-WebProject
 ```
->>>>>>> fde0050 (5th  commit)
->>>>>>> e700d07 (first commit)
+
+Install dependencies
+
+```bash
+  npm install
+```
+```bash
+  npm install
+  npm install axios firebase react-router-dom
+
+
+Start the server
+
+
+  npm run dev
+```
+
+
+## API Reference
+
+#### Get all items
+
+```http
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+
